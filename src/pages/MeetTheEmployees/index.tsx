@@ -3,6 +3,8 @@ import "./index.css";
 import Header from "../../components/Header";
 import EmployeeCard from "./components/EmployeeCard";
 
+import { Pagination } from "react-bootstrap";
+
 const index = () => {
   return (
     <>
@@ -20,6 +22,17 @@ const index = () => {
           <EmployeeCard />
           <EmployeeCard />
           <EmployeeCard />
+          <EmployeeCard />
+        </div>
+        <div className="meet__the__employees__pagination">
+          <Pagination>
+            <Pagination.Prev />
+            <Pagination.Item active>{1}</Pagination.Item>
+            <Pagination.Item>{2}</Pagination.Item>
+            <Pagination.Item>{3}</Pagination.Item>
+            <Pagination.Item>{4}</Pagination.Item>
+            <Pagination.Next />
+          </Pagination>
         </div>
       </div>
     </>

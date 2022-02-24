@@ -1,7 +1,7 @@
 .meet__the__employees__background {
   top: 0;
   position: fixed;
-  background: url("/src/assets/capa.jpg");
+  background: url("/src/assets/capa.png");
   background-size: cover;
   height: 100%;
   width: 100%;
@@ -14,6 +14,7 @@
   max-width: 1200px;
   width: 80%;
   margin: 0 auto;
+  z-index: 200;
 }
 
 .employes__board__margin {
@@ -21,8 +22,8 @@
   top: 0;
   left: 0px;
   height: 100vh;
-  width: 60px;
-  background-color: #313131;
+  width: 70px;
+  background-color: #2c2c2c;
   box-shadow: 7px 5px 18px -4px rgba(0, 0, 0, 0.74);
 }
 
@@ -33,18 +34,18 @@
   gap: 10px;
   font-family: "Roboto", sans-serif;
   z-index: 100;
-  margin: 90px 0px 50px 30px;
+  margin: 110px 0px 60px 30px;
 }
 
 .employes__board__title h2 {
-  font-size: 2.2rem;
+  font-size: 2.3rem;
   padding-top: 5px;
   font-weight: 300;
 }
 
 .employes__board__title div {
   background-color: cadetblue;
-  height: 44px;
+  height: 47px;
   width: 4px;
 }
 
@@ -53,9 +54,15 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 40px 40px;
+  gap: 50px 90px;
   align-self: center;
-  margin-left: 28px;
+  margin-left: 44px;
+}
+
+.meet__the__employees__pagination {
+  margin: 120px auto 0px auto;
+  padding-bottom: 80px;
+  z-index: 100;
 }
 
 @media (max-width: 670px) {

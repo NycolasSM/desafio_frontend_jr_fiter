@@ -23,9 +23,9 @@ const index = () => {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav>
                 <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#link">Link</Nav.Link>
-                <Nav.Link href="#link">Link</Nav.Link>
-                <Nav.Link href="#link">Link</Nav.Link>
+                <Nav.Link href="#link">Produtos</Nav.Link>
+                <Nav.Link href="#link">Sobre a empresa</Nav.Link>
+                <Nav.Link href="#link">Colaborades</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </div>
