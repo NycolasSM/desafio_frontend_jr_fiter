@@ -1,0 +1,16 @@
+.container {
+  width: 10vw;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.employee__card__group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.employee__card__image {
+  margin-top: 70px;
+  border-radius: 50% !important;
+}
