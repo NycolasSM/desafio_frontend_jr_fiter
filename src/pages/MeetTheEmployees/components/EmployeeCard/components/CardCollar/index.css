@@ -1,0 +1,28 @@
+.employee__card__collar {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(-60px);
+  margin-bottom: -110px;
+}
+
+.employee__card__collar__fit {
+  height: 90px;
+  width: 30px;
+  background-color: rgb(155, 41, 41);
+  z-index: 100;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.employee__card__groove {
+  height: 20px;
+  width: 80px;
+  background-color: black;
+  margin: 0 auto;
+  transform: translateY(-10px);
+  border-radius: 30px;
+  z-index: 1;
+}

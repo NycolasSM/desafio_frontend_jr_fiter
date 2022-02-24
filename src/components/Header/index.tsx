@@ -6,7 +6,7 @@ import Logo from "../../assets/logo.png";
 
 const index = () => {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar bg="dark" variant="dark" expand="lg" style={{ zIndex: "999" }}>
       <Container>
         <Stack
           direction="horizontal"

@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react";
 
-import { Card, CardGroup } from "react-bootstrap";
 import VanillaTilt from "vanilla-tilt";
+
+import CardCollar from "./components/CardCollar";
 
 import "./index.css";
 
@@ -23,79 +24,27 @@ const index = () => {
     speed: 2500,
     max: 10,
     glare: true,
-    "max-glare": 0.1,
+    "max-glare": 0.3,
   };
 
   return (
-    <div className="container">
-      <CardGroup className="employee__card__group gap-10">
-        <Card
-          className="employee__card"
-          style={{ border: "none", height: "400px", width: "200px" }}
-        >
-          <Tilt className="cardTilt" tiltOptions={tiltOptions}>
-            <Card.Img
-              className="employee__card__image"
-              variant="top"
-              style={{ height: "150px", width: "150px" }}
-              src="https://picsum.photos/id/1/200/300"
-            />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a wider card with supporting text below as a natura
-                lead-in to additional content. This content is a little bit
-                longer.
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer>
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </Card.Footer>
-          </Tilt>
-        </Card>
-        <Card style={{ border: "none" }}>
-          <Tilt className="cardTilt" tiltOptions={tiltOptions}>
-            <Card.Img
-              className="employee__card__image"
-              variant="top"
-              style={{ height: "150px", width: "150px" }}
-              src="https://picsum.photos/id/1/200/300"
-            />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer>
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </Card.Footer>
-          </Tilt>
-        </Card>
-        <Card style={{ border: "none" }}>
-          <Tilt className="cardTilt" tiltOptions={tiltOptions}>
-            <Card.Img
-              className="employee__card__image"
-              variant="top"
-              style={{ height: "150px", width: "150px" }}
-              src="https://picsum.photos/id/1/200/300"
-            />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer>
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </Card.Footer>
-          </Tilt>
-        </Card>
-      </CardGroup>
+    <div>
+      <div className="employee__card__collar__mockup"></div>
+      <Tilt tiltOptions={tiltOptions}>
+        <div className="employee__card">
+          <CardCollar />
+          <img
+            className="employee__card__image"
+            src="https://picsum.photos/200"
+            alt=""
+          />
+          <div className="employee__card__info">
+            <h3>Sergio Amad</h3>
+            <h4>Founder & CEO</h4>
+            <p>Telefone: 11921345675"</p>
+          </div>
+        </div>
+      </Tilt>
     </div>
   );
 };
