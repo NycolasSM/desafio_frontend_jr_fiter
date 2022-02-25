@@ -3,7 +3,7 @@
   position: fixed;
   background: url("/src/assets/capa.png");
   background-size: cover;
-  height: 100%;
+  height: 120%;
   width: 100%;
   z-index: -1;
 }
