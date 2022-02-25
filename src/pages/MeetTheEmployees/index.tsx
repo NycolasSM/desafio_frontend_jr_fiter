@@ -10,7 +10,7 @@ import EmployeeCard from "./components/EmployeeCard";
 import { Pagination } from "react-bootstrap";
 
 const index = () => {
-  const [totalCardsToRender, setTotalCardsToRender] = useState(9);
+  const [totalCardsToRender] = useState(9);
   const [collaborators, setCollaborators] = useState([]);
   const [actualPage, setActualPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
