@@ -6,6 +6,7 @@ import { GetCollaborators } from "../../services/api";
 
 import Header from "../../components/Header";
 import EmployeeCard from "./components/EmployeeCard";
+import EmployeeCardLoading from "./components/EmployeeCardLoading";
 import BoardMargin from "./components/BoardMargin";
 
 import { Pagination } from "react-bootstrap";
@@ -58,6 +59,18 @@ const index = () => {
             <h2>Conheça nossos colaboradores</h2>
           </div>
           <div className="employes__board__collaborators__cards">
+            {collaborators.length != 0 ? (
+              ""
+            ) : (
+              <>
+                <EmployeeCardLoading />
+                <EmployeeCardLoading />
+                <EmployeeCardLoading />
+                <EmployeeCardLoading />
+                <EmployeeCardLoading />
+                <EmployeeCardLoading />
+              </>
+            )}
             {collaborators.map((collaborator) => (
               <EmployeeCard
                 key={collaborator.id}
@@ -70,25 +83,29 @@ const index = () => {
           </div>
         </div>
         <div className="meet__the__employees__pagination">
-          <Pagination>
-            <Pagination.Prev onClick={() => paginationPrevPage()} />
-            {Array(totalPages)
-              .fill("")
-              .map((_, index) => {
-                return (
-                  <Pagination.Item
-                    key={index + 1}
-                    id="pagination"
-                    active={index + 1 === actualPage}
-                    data-page={index + 1}
-                    onClick={() => setActualPage(index + 1)}
-                  >
-                    {index + 1}
-                  </Pagination.Item>
-                );
-              })}
-            <Pagination.Next onClick={() => paginationNextPage()} />
-          </Pagination>
+          {totalPages != 0 ? (
+            <Pagination>
+              <Pagination.Prev onClick={() => paginationPrevPage()} />
+              {Array(totalPages)
+                .fill("")
+                .map((_, index) => {
+                  return (
+                    <Pagination.Item
+                      key={index + 1}
+                      id="pagination"
+                      active={index + 1 === actualPage}
+                      data-page={index + 1}
+                      onClick={() => setActualPage(index + 1)}
+                    >
+                      {index + 1}
+                    </Pagination.Item>
+                  );
+                })}
+              <Pagination.Next onClick={() => paginationNextPage()} />
+            </Pagination>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </>

@@ -39,24 +39,51 @@
   font-family: "Roboto", sans-serif;
   z-index: 100;
   margin: 70px 0px 60px 30px;
+  overflow: hidden;
 }
 
 .employes__board__title h2 {
   font-size: 2.4rem;
   padding-top: 5px;
   font-weight: 300;
+  animation: showTitle 1.6s forwards;
+  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .employes__board__title div {
   background-color: cadetblue;
   height: 47px;
-  width: 4px;
+  width: 6px;
+  z-index: 100;
 }
 
 .meet__the__employees__pagination {
   margin: 120px auto 0px auto;
   padding-bottom: 80px;
   z-index: 100;
+}
+
+.cards__loading {
+  margin-bottom: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px 90px;
+  align-self: center;
+}
+
+@keyframes showTitle {
+  0% {
+    transform: translateX(-600px);
+    filter: opacity(0);
+  }
+  80% {
+    filter: opacity(1);
+  }
+  100% {
+    transform: translateX(0px);
+    filter: opacity(1);
+  }
 }
 
 @media (max-width: 670px) {

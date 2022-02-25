@@ -1,0 +1,59 @@
+.employee__card__container--loading {
+  transform: scale(0.95);
+}
+
+.employee__card--loading {
+  height: 360px;
+  width: 250px;
+  background: linear-gradient(90deg, #858585, #a7a7a7, #858585);
+  background-size: 300% 300%;
+  animation: loading 3s ease-out infinite;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.employee__card__image--loading {
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  border: solid 2px black;
+  background: linear-gradient(90deg, #858585, #a7a7a7, #858585);
+  background-size: 300% 300%;
+  animation: loading 3s ease-out infinite;
+  margin: auto;
+  margin-top: 60px;
+}
+
+.employee__card__info--loading h3 {
+  height: 23px;
+  width: 70%;
+  background-color: gray;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.employee__card__info--loading h4 {
+  height: 18px;
+  width: 80%;
+  background-color: #999999;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.employee__card__info--loading p {
+  height: 20px;
+  width: 50%;
+  background-color: #999999;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 0%;
+  }
+
+  100% {
+    background-position: 300%;
+  }
+}
