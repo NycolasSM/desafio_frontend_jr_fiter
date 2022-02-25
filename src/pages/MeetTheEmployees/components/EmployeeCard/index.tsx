@@ -2,6 +2,8 @@ import { useEffect, useRef } from "react";
 
 import VanillaTilt from "vanilla-tilt";
 
+import { BrowserView, MobileView } from "react-device-detect";
+
 import CardCollar from "./components/CardCollar";
 
 import "./index.css";
@@ -35,9 +37,27 @@ const index: React.FC<Props> = ({ name, role, phone, profileImg }) => {
   };
 
   return (
-    <div>
-      <div className="employee__card__collar__mockup"></div>
-      <Tilt tiltOptions={tiltOptions}>
+    <>
+      <BrowserView>
+        <div className="employee__card__collar__mockup"></div>
+        <Tilt tiltOptions={tiltOptions}>
+          <div className="employee__card">
+            <CardCollar />
+            <img
+              className="employee__card__image"
+              src={profileImg}
+              alt="collaborator profile image"
+            />
+            <div className="employee__card__info">
+              <h3>{name}</h3>
+              <h4>{role}</h4>
+              <p>Telefone: {phone}</p>
+            </div>
+          </div>
+        </Tilt>
+      </BrowserView>
+      <MobileView>
+        <div className="employee__card__collar__mockup"></div>
         <div className="employee__card">
           <CardCollar />
           <img
@@ -51,8 +71,8 @@ const index: React.FC<Props> = ({ name, role, phone, profileImg }) => {
             <p>Telefone: {phone}</p>
           </div>
         </div>
-      </Tilt>
-    </div>
+      </MobileView>
+    </>
   );
 };
 
