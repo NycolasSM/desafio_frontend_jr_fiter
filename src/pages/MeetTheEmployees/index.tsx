@@ -6,6 +6,7 @@ import { GetCollaborators } from "../../services/api";
 
 import Header from "../../components/Header";
 import EmployeeCard from "./components/EmployeeCard";
+import BoardMargin from "./components/BoardMargin";
 
 import { Pagination } from "react-bootstrap";
 
@@ -50,21 +51,23 @@ const index = () => {
       <Header />
       <div className="meet__the__employees__background"></div>
       <div className="meet__the__employees">
-        <div className="employes__board__margin"></div>
-        <div className="employes__board__title">
-          <div></div>
-          <h2>Conheça nossos colaboradores</h2>
-        </div>
         <div className="employes__board">
-          {collaborators.map((collaborator) => (
-            <EmployeeCard
-              key={collaborator.id}
-              name={collaborator.nome}
-              role={collaborator.cargo}
-              phone={collaborator.telefone}
-              profileImg={collaborator.foto}
-            />
-          ))}
+          <BoardMargin />
+          <div className="employes__board__title">
+            <div></div>
+            <h2>Conheça nossos colaboradores</h2>
+          </div>
+          <div className="employes__board__collaborators__cards">
+            {collaborators.map((collaborator) => (
+              <EmployeeCard
+                key={collaborator.id}
+                name={collaborator.nome}
+                role={collaborator.cargo}
+                phone={collaborator.telefone}
+                profileImg={collaborator.foto}
+              />
+            ))}
+          </div>
         </div>
         <div className="meet__the__employees__pagination">
           <Pagination>
