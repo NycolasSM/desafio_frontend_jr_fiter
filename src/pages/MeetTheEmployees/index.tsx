@@ -10,18 +10,40 @@ import EmployeeCard from "./components/EmployeeCard";
 import { Pagination } from "react-bootstrap";
 
 const index = () => {
+  const [totalCardsToRender, setTotalCardsToRender] = useState(9);
   const [collaborators, setCollaborators] = useState([]);
+  const [actualPage, setActualPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
 
   useEffect(() => {
     loadCollaboratorsData();
-  }, []);
+  }, [actualPage]);
 
   const loadCollaboratorsData = async () => {
-    const collaborators = await GetCollaborators(1, 9);
+    const collaborators = await GetCollaborators(
+      actualPage,
+      totalCardsToRender,
+    );
+    const totalOfCollaborators = parseInt(
+      collaborators.headers["x-total-count"],
+    );
+    const totalOfPages = Math.ceil(totalOfCollaborators / totalCardsToRender);
+
     setCollaborators(collaborators.data);
+    setTotalPages(totalOfPages);
   };
 
-  console.log(collaborators);
+  const paginationNextPage = () => {
+    if (actualPage < totalPages) {
+      setActualPage(actualPage + 1);
+    }
+  };
+
+  const paginationPrevPage = () => {
+    if (actualPage > 1) {
+      setActualPage(actualPage - 1);
+    }
+  };
 
   return (
     <>
@@ -46,12 +68,23 @@ const index = () => {
         </div>
         <div className="meet__the__employees__pagination">
           <Pagination>
-            <Pagination.Prev />
-            <Pagination.Item active>{1}</Pagination.Item>
-            <Pagination.Item>{2}</Pagination.Item>
-            <Pagination.Item>{3}</Pagination.Item>
-            <Pagination.Item>{4}</Pagination.Item>
-            <Pagination.Next />
+            <Pagination.Prev onClick={() => paginationPrevPage()} />
+            {Array(totalPages)
+              .fill("")
+              .map((_, index) => {
+                return (
+                  <Pagination.Item
+                    key={index + 1}
+                    id="pagination"
+                    active={index + 1 === actualPage}
+                    data-page={index + 1}
+                    onClick={() => setActualPage(index + 1)}
+                  >
+                    {index + 1}
+                  </Pagination.Item>
+                );
+              })}
+            <Pagination.Next onClick={() => paginationNextPage()} />
           </Pagination>
         </div>
       </div>
