@@ -47,7 +47,7 @@ const index: React.FC<Props> = ({ name, role, phone, profileImg }) => {
               <img
                 className="employee__card__image"
                 src={profileImg}
-                alt="collaborator profile image"
+                alt="profile image"
               />
               <div className="employee__card__info">
                 <h3>{name}</h3>
@@ -66,7 +66,7 @@ const index: React.FC<Props> = ({ name, role, phone, profileImg }) => {
             <img
               className="employee__card__image"
               src={profileImg}
-              alt="collaborator profile image"
+              alt="profile image"
             />
             <div className="employee__card__info">
               <h3>{name}</h3>

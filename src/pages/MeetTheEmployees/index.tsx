@@ -2,7 +2,10 @@ import "./index.css";
 
 import { useEffect, useState } from "react";
 
-import { GetCollaborators } from "../../services/api";
+import {
+  GetCollaboratorsNycolasAPi,
+  GetCollaboratorsFiterApi,
+} from "../../services/api";
 
 import Header from "../../components/Header";
 import EmployeeCard from "./components/EmployeeCard";
@@ -17,12 +20,14 @@ const index = () => {
   const [actualPage, setActualPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
 
+  // to change which api the data will be pulled from, change the loadCollaboratorsDataFrom function
   useEffect(() => {
-    loadCollaboratorsData();
+    loadCollaboratorsDataFromNycolasApi();
   }, [actualPage]);
 
-  const loadCollaboratorsData = async () => {
-    const collaborators = await GetCollaborators(
+  // To use Nycolas Challenge Api
+  const loadCollaboratorsDataFromNycolasApi = async () => {
+    const collaborators = await GetCollaboratorsNycolasAPi(
       actualPage,
       totalCardsToRender,
     );
@@ -33,6 +38,12 @@ const index = () => {
 
     setCollaborators(collaborators.data);
     setTotalPages(totalOfPages);
+  };
+
+  // To use Fiter Challenge Api
+  const loadCollaboratorsDataFromFiterApi = async () => {
+    const collaborators = await GetCollaboratorsFiterApi();
+    setCollaborators(collaborators.data);
   };
 
   const paginationNextPage = () => {
