@@ -6,7 +6,14 @@ import CardCollar from "./components/CardCollar";
 
 import "./index.css";
 
-const index = () => {
+type Props = {
+  name: string;
+  role: string;
+  phone: string;
+  profileImg: string;
+};
+
+const index: React.FC<Props> = ({ name, role, phone, profileImg }) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   function Tilt(props: any) {
     const { tiltOptions, ...rest } = props;
@@ -35,13 +42,13 @@ const index = () => {
           <CardCollar />
           <img
             className="employee__card__image"
-            src="https://picsum.photos/200"
-            alt=""
+            src={profileImg}
+            alt="collaborator profile image"
           />
           <div className="employee__card__info">
-            <h3>Sergio Amad</h3>
-            <h4>Founder & CEO</h4>
-            <p>Telefone: 11921345675"</p>
+            <h3>{name}</h3>
+            <h4>{role}</h4>
+            <p>Telefone: {phone}</p>
           </div>
         </div>
       </Tilt>

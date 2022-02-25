@@ -20,11 +20,10 @@
 }
 
 .employee__card__collar__mockup {
-  background-color: #8f909b;
-  background: url("../../../../assets/FiterBadge.png");
+  background-color: #7a7b83;
   background-size: cover;
   outline: #1b1b1b 4px solid;
-  border: solid #464646 5px;
+  border: solid #464646 7px;
   position: relative;
   margin: 0 auto;
   height: 50px;
@@ -34,13 +33,25 @@
   margin-bottom: 40px;
 }
 
-.employee__card__info h3{
+.employee__card__info h3 {
+  font-size: 1.6rem;
+  margin: 0 auto;
+  width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 3px;
   margin-bottom: 3px;
 }
 
 .employee__card__info h4 {
-  font-size: 1.2rem;
-  color: rgb(61, 61, 61);
+  font-size: 1.1rem;
+  margin: 0 auto;
+  width: 90%;
+  color: rgb(71, 71, 71);
+  max-width: 25ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .employee__card__info p {
